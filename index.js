@@ -1,18 +1,18 @@
 // code your solution here
+
+//default function
 function saturdayFun(activity="roller-skate") {
 
     return `This Saturday, I want to ${activity}!`
     
 }
 
-
 const mondayWork = function (activivty ="go to the office"){
 
     return `This Monday, I will ${activivty}.`
 }
-//console.log(mondayWork("work from home"))
 
-
+// level scope
 function outer (greeting , msg=  "its a fine day to play "){
 
     return function (name, activity){
@@ -21,24 +21,10 @@ function outer (greeting , msg=  "its a fine day to play "){
 
 
 }
-
-//console.log(outer("hello")("erick" , "basketball"));
-
-
-const array = (function(thingToAdd){
-    const base = 3;
-    return [
-      function () {
-         return base + thingToAdd
-
-      },
-      function(){
-
-        return base;
-      },
-
-    ];
-
-})(2);
-
-console.log(array (5))
+//scope chain
+function wrapAdjective (flair ='*'){
+ return function (adjective = 'special'){
+    return `You are ${flair}${adjective}${flair}!`
+ }
+}
+console.log(wrapAdjective()("a hard worker") )
